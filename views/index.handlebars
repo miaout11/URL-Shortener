@@ -3,12 +3,15 @@
   <img class="mt-5 d-block mx-auto" style="height: 200px;"
     src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png"
     alt="URL Shortener img">
+
   <div class="mt-5">
-    <form action="/">
+    <form action="/" method="POST">
       <div class="input-group">
-        <input class="form-control mt-5" type="text" name="name" id="name" placeholder="Input URL here" required>
+        <input class="form-control mt-5" type="text" name="originUrl" id="originUrl" placeholder="Input URL here"
+          required>
       </div>
+      <button type="submit" class="btn btn-primary mt-3 d-block mx-auto"
+        style="width: 200px; font-size: 25px;">Shorten</button>
     </form>
   </div>
-  <button class="btn btn-primary mt-3 d-block mx-auto" style="width: 200px; font-size: 25px;">Shorten</button>
 </div>
