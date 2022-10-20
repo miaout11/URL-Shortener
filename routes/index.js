@@ -14,7 +14,6 @@ router.get('/:shorten', (req, res) => {
     .lean()
     .then((relink) => {
       if (relink) {
-        console.log(relink)
         res.status(301).redirect(relink.originUrl)
       }
     })
@@ -34,17 +33,19 @@ router.post('/', (req, res) => {
       if (newShortUrl) {
         newShortUrl = mainUrl + newShortUrl.shorten
         return res.render('new', { newShortUrl, inputUrl })
-      }
-      let shorten = newShorten()
-      newShortUrl = mainUrl + shorten;
+      } else {
+        let shorten = newShorten()
+        newShortUrl = mainUrl + shorten;
 
-      while (urlList.some((eachUrl) => eachUrl.shorten === shorten)) {
-        shorten = newShorten()
+        while (urlList.some((eachUrl) => eachUrl.shorten === shorten)) {
+          shorten = newShorten()
+        }
+        Url.create({
+          originUrl: inputUrl,
+          shorten: shorten,
+        })
+        return res.render('new', { newShortUrl, inputUrl })
       }
-      return Url.create({
-        originUrl: inputUrl,
-        shorten: shorten,
-      })
     })
     .catch((error) => console.log(error))
 });
