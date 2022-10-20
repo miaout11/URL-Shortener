@@ -1,6 +1,6 @@
 # URL Shortener - introduction
 
-可以縮短網址長度
+可以縮短網址的長度
 
 首頁圖
 ![Index page about Restaurant List](./public/image/shortUrl1.png)
@@ -10,15 +10,15 @@
 
 ## 功能列表
 
-- 可將網址縮短
+- 可將網址縮短，並可透過按鈕直接複製成功縮短的網址。
 
 ### 安裝與執行步驟
 
 1. 請先確認有安裝 node.js 與 npm
 2. 將專案 clone 到本地
 3. 環境變數設置: 
-   * Windows cmd： set "MONGODB_PATH=你的MongoDB連線字串"
-   * MacOS terminal and git bash :  export MONGODB_PATH="你的MongoDB連線字串"
+   * Windows cmd： set "MONGODB_SHORT_URI=你的MongoDB連線字串"
+   * MacOS terminal and git bash :  export MONGODB_SHORT_URI="你的MongoDB連線字串"
 4. 在本地開啟之後，透過終端機進入資料夾，輸入：
 
    ```
