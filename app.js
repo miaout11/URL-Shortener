@@ -10,6 +10,8 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 // setting express內建的body-parser
 app.use(express.urlencoded({ extended: true }))
+// 載入靜態檔案
+app.use(express.static('public'))
 
 const routes = require('./routes')
 require('./config/mongoose')
