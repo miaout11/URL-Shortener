@@ -1,7 +1,10 @@
 const express = require('express')
 const router = express.Router()
-const home = require('./modules/home')
+const Url = require('../models/url')
+const newShorten = require('../utility/newShorten')
 
-router.use('/', home)
+router.get('/', (req, res) => {
+  res.render('index')
+});
 
-module.exports = router
+module.exports = router;

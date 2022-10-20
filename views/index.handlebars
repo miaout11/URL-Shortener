@@ -1,17 +1,8 @@
-<div class="col" style="margin: 180px 200px;">
-  <h1 class="mt-5" style="text-align: center;">URL Shortener</h1>
-  <img class="mt-5 d-block mx-auto" style="height: 200px;"
-    src="https://assets-lighthouse.alphacamp.co/uploads/image/file/16716/ExportedContentImage_00.png"
-    alt="URL Shortener img">
-
-  <div class="mt-5">
-    <form action="/" method="POST">
-      <div class="input-group">
-        <input class="form-control mt-5" type="text" name="originUrl" id="originUrl" placeholder="Input URL here"
-          required>
-      </div>
-      <button type="submit" class="btn btn-primary mt-3 d-block mx-auto"
-        style="width: 200px; font-size: 25px;">Shorten</button>
-    </form>
+<form action="/" method="POST" style="margin-top: 100px;">
+  <div class="input-group mt-5">
+    <input class="form-control" type="url" name="inputUrl" id="inputUrl" style="width: 50px;"
+      placeholder="Input URL here" required>
   </div>
-</div>
+  <button type="submit" class="btn btn-primary mt-3 d-block mx-auto"
+    style="width: 200px; font-size: 25px;">Shorten</button>
+</form>

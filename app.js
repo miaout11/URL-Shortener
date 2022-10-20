@@ -2,8 +2,6 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
 
-const routes = require('./routes')
-require('./config/mongoose')
 const app = express()
 const port = 3000
 
@@ -12,6 +10,9 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 // setting express內建的body-parser
 app.use(express.urlencoded({ extended: true }))
+
+const routes = require('./routes')
+require('./config/mongoose')
 // 將request導入路由器
 app.use(routes)
 
