@@ -21,5 +21,32 @@ router.get('/:shorten', (req, res) => {
     .catch((error) => console.log(error))
 });
 
+// get the short url
+const mainUrl = 'http://localhost:3000/'
+let newShortUrl = ''
+
+router.post('/', (req, res) => {
+  const inputUrl = req.body.inputUrl
+  Url.find()
+    .lean()
+    .then((urlList) => {
+      newShortUrl = urlList.find((eachUrl) => eachUrl.originUrl === inputUrl)
+      if (newShortUrl) {
+        newShortUrl = mainUrl + newShortUrl.shorten
+        return res.render('new', { newShortUrl, inputUrl })
+      }
+      let shorten = newShorten()
+      newShortUrl = mainUrl + shorten;
+
+      while (urlList.some((eachUrl) => eachUrl.shorten === shorten)) {
+        shorten = newShorten()
+      }
+      return Url.create({
+        originUrl: inputUrl,
+        shorten: shorten,
+      })
+    })
+    .catch((error) => console.log(error))
+});
 
 module.exports = router;
