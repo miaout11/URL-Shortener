@@ -3,8 +3,8 @@ const router = express.Router()
 const Url = require('../models/url')
 const newShorten = require('../utility/newShorten')
 
-const mainUrl = 'http://localhost:3000/'
-let newShortUrl = ''
+const mainUrl = 'http://localhost:3000/' // **全域變數宣告要放在檔案最上方**
+let newShortUrl = ''                     // **全域變數宣告要放在檔案最上方**
 
 router.get('/', (req, res) => {
   res.render('index')

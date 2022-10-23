@@ -1,7 +1,7 @@
 // 載入套件
 const express = require('express')
 const exphbs = require('express-handlebars')
-const routes = require('./routes')
+const routes = require('./routes') // **全域變數宣告要放在檔案最上方**
 
 const app = express()
 const port = 3000
