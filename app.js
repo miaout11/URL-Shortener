@@ -1,6 +1,7 @@
 // 載入套件
 const express = require('express')
 const exphbs = require('express-handlebars')
+const routes = require('./routes')
 
 const app = express()
 const port = 3000
@@ -13,7 +14,6 @@ app.use(express.urlencoded({ extended: true }))
 // 載入靜態檔案
 app.use(express.static('public'))
 
-const routes = require('./routes')
 require('./config/mongoose')
 // 將request導入路由器
 app.use(routes)

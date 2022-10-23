@@ -3,6 +3,9 @@ const router = express.Router()
 const Url = require('../models/url')
 const newShorten = require('../utility/newShorten')
 
+const mainUrl = 'http://localhost:3000/'
+let newShortUrl = ''
+
 router.get('/', (req, res) => {
   res.render('index')
 });
@@ -21,9 +24,6 @@ router.get('/:shorten', (req, res) => {
 });
 
 // get the short url
-const mainUrl = 'http://localhost:3000/'
-let newShortUrl = ''
-
 router.post('/', (req, res) => {
   const inputUrl = req.body.inputUrl
   Url.find()
