@@ -6,7 +6,7 @@
     Success! Please use the link below :
   </div>
   <div class="input-group">
-    <input class="form-control" type="url" name="shorten" id="shorten" value="{{newShortUrl}}" disabled>
+    <input class="form-control" type="url" name="shorten" id="input-shorten" value="{{newShortUrl}}" disabled>
     <button onclick="copyOnclick()" class="btn btn-primary ms-2">COPY</button>
   </div>
   <div class="d-flex justify-content-center">
@@ -15,17 +15,3 @@
     </a>
   </div>
 </div>
-
-{{!-- copy function --}}
-<script>
-  function copyOnclick() {
-    const copyText = document.getElementById('shorten')
-
-    copyText.select()
-    copyText.setSelectionRange(0, 99999)
-
-    navigator.clipboard.writeText(copyText.value)
-    alert('Copied the text:' + copyText.value)
-
-  }
-</script>
